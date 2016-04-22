@@ -9,11 +9,16 @@ It is the main node. It connects to slack via a bot and sends commands to the re
 ## Start
 1. To start the main node you have to enter your slack bot token to the `config.json`. (To create a bot please see [Creating a new bot](https://my.slack.com/services/new/bot) )
 2. Run ```npm install```
-3. Run ```node app```
+3. Run ```node app.js```
 4. Have fun!
 
 ## Client
 You can find the client node lib at https://github.com/duglah/nodeclient and an example for how to use the client at https://github.com/duglah/testnode .
+
+### Other clients
+If you would like to control a rgb led strip via your slackbot you should check out https://github.com/duglah/rgbnode .
+It is a node which recieves commands from slack and sends them to the [rgb-pi](https://github.com/ryupold/rgb-pi)
+(Nice project!) server.
 
 ## Todos
 * Register on ping events
