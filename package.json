@@ -1,11 +1,25 @@
 {
   "name": "slackbotnode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Main node for the slackbot node network",
-  "bin": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duglah/slackbotnode"
+  },
+  "bin": "dist/app.js",
   "dependencies": {
     "body-parser": "1.15.0",
     "express": "4.13.4",
-    "botkit": "0.0.7 "
+    "botkit": "0.0.7 ",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.12.1",
+    "request": "^2.72.0",
+    "typings": "^0.8.1"
+  },
+  "devDependencies": {
+    "tsd": "^0.6.5"
   }
 }
