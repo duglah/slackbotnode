@@ -1,3 +1,4 @@
+import { TsConfig } from 'nodeclient/node_modules/gulp-typescript/release/tsconfig';
 /// <reference path="../typings/express/express.d.ts" />
 /// <reference path="../typings/request/request.d.ts" />
 
@@ -9,7 +10,7 @@ var app = express();
 var botkit = require('botkit');
 var os = require('os');
 var bodyParser = require('body-parser');
-var config = require('../config.json');
+var config:{slackbot_token:string} = require('../config.json');
 
 var defaultNodePort = "8085";
 var defaultMainNodePort = "8080";
@@ -20,7 +21,9 @@ var defaultNodeTimeout = 1000 * 30; //1000 * 60 * 5; //5 minutes
 
 //Setup bot
 var controller = botkit.slackbot(); 
-
+if(!config.slackbot_token){
+    throw new Error("Please create config.json and set \"slackbot_token\":\"YOUR_SLACK_TOKEN\"");
+}
 var bot = controller.spawn({
     token: config.slackbot_token
 });
